@@ -1,11 +1,14 @@
 $(document).ready(function() {
-  var topics = ["aqua teen hunger force", "brooklyn 99", "metalocalypse", "Parks and Rec"];
+  var topics = ["aqua teen hunger force", "brooklyn 99", "metalocalypse", "Parks and Rec", "superjail"];
 
   // create buttons from 'topics' array (display in buttonDiv)
   function renderButtons() {
     $("#buttonDiv").empty();
+    $("#buttonDiv").html("<h3>" + "Click on a show to see some gifs!" + "</h3>");
     for (var i = 0; i < topics.length; i++) {
       var t = $("<button>");
+      t.addClass("btn");
+      t.addClass("btn-primary");
       t.addClass("topicBtn");
       t.attr("data-name", topics[i]);
       t.text(topics[i]);
@@ -62,5 +65,8 @@ $(document).ready(function() {
     var topic = $("#topic-input").val();
     topics.push(topic);
     renderButtons();
+    $("#topic-form")
+      .children("#topic-input")
+      .val("");
   });
 });

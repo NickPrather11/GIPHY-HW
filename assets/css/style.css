@@ -1,0 +1,9 @@
+.topicBtn {
+  margin: 5px;
+}
+
+#searchDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px;
+}
